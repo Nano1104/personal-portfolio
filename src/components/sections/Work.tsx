@@ -16,12 +16,7 @@ function ProjectMockup({ project }: { project: Project }) {
 
     return (
         <div
-            style={{
-                margin: '0 52px 52px',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                border: '1px solid var(--border)',
-            }}
+            className="project-mockup-wrapper"
         >
             {/* Browser chrome */}
             <div
@@ -57,11 +52,7 @@ function ProjectMockup({ project }: { project: Project }) {
 
             {/* Screenshot strip — primary (62%) + secondary (38%) */}
             <div
-                style={{
-                    height: '220px',
-                    display: 'flex',
-                    background: 'var(--bg-2)',
-                }}
+                className="project-mockup-screen"
             >
                 {/* Primary screenshot */}
                 <div
@@ -153,27 +144,14 @@ function Placeholder({ label }: { label: string }) {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
     return (
         <motion.article
+            className="project-card"
             variants={fadeUp}
-            style={{
-                border: '1px solid var(--border)',
-                borderRadius: '10px',
-                overflow: 'hidden',
-                background: 'var(--bg-2)',
-                marginBottom: '20px',
-                transition: 'border-color 0.3s',
-            }}
             whileHover={{ borderColor: 'var(--border-m)' }}
             aria-label={`Project: ${project.client}`}
         >
             {/* Case study body */}
             <div
-                style={{
-                    padding: '52px',
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '56px',
-                    alignItems: 'start',
-                }}
+                className="project-body"
             >
                 {/* LEFT — identity + description + links */}
                 <div>
@@ -213,7 +191,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     <p
                         style={{
                             fontFamily: 'var(--font-mono)',
-                            fontSize: '12px',
+                            fontSize: 'clamp(12px, 1.5vw, 14px)',
                             color: 'var(--accent)',
                             letterSpacing: '0.05em',
                             marginBottom: '20px',
@@ -224,7 +202,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
                     <p
                         style={{
-                            fontSize: '14px',
+                            fontSize: 'clamp(14px, 2vw, 16px)',
                             color: 'var(--t2)',
                             lineHeight: 1.72,
                             marginBottom: '32px',
@@ -248,7 +226,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     <p
                         style={{
                             fontFamily: 'var(--font-mono)',
-                            fontSize: '10px',
+                            fontSize: 'clamp(12px, 1vw, 14px)',
                             color: 'var(--t3)',
                             textTransform: 'uppercase',
                             letterSpacing: '0.1em',
@@ -308,7 +286,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                                     background: 'var(--accent-bg)',
                                     border: '1px solid var(--accent-border)',
                                     borderRadius: '100px',
-                                    fontSize: '11px',
+                                    fontSize: 'clamp(12px, 1vw, 14px)',
                                     color: 'var(--accent)',
                                     fontFamily: 'var(--font-mono)',
                                     letterSpacing: '0.02em',
@@ -391,7 +369,7 @@ export function Work() {
         <section
             id="work"
             aria-label="Selected Work"
-            style={{ padding: '112px 40px', maxWidth: 'var(--max-w)', margin: '0 auto' }}
+            className="work-section"
         >
             <div className="section-label">Selected Work</div>
 

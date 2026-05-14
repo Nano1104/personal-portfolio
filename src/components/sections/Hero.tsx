@@ -4,29 +4,40 @@ import { motion } from 'framer-motion'
 import { personal } from '@/lib/data'
 import { heroItem, stagger } from '@/lib/motion'
 
+const LINKS = [
+    { label: 'View Work →', href: '#work', external: false, primary: true },
+    { label: 'LinkedIn ↗', href: personal.linkedin, external: true, primary: false },
+    { label: 'GitHub ↗', href: personal.github, external: true, primary: false },
+]
+
+const META_ITEMS = [
+    'React · Next.js · Node.js',
+    'Open to remote',
+    '2 live client projects',
+]
+
 export function Hero() {
     const container = stagger(0.14, 0)
 
     return (
-        <section
-            aria-label="Introduction"
-            style={{
-                minHeight: '100vh',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                padding: '110px 40px 80px',
-                maxWidth: 'var(--max-w)',
-                margin: '0 auto',
-            }}
-        >
+        /*
+         * hero-section → defined in globals.css
+         * Handles padding at every breakpoint:
+         *   desktop  → 110px 40px 80px
+         *   lg       → 100px 28px 72px
+         *   md       → 88px  20px 60px
+         *   sm       → same as md
+         *   xs       → 80px  16px 52px
+         */
+        <section className="hero-section" aria-label="Introduction">
             <motion.div
                 variants={container}
                 initial="hidden"
                 animate="visible"
                 style={{ display: 'flex', flexDirection: 'column' }}
             >
-                {/* Status badge */}
+
+                {/* ── Status badge ── */}
                 <motion.div
                     variants={heroItem(0)}
                     style={{
@@ -35,7 +46,7 @@ export function Hero() {
                         gap: '8px',
                         fontFamily: 'var(--font-mono)',
                         fontSize: '11px',
-                        color: 'var(--t3)',
+                        color: 'var(--t2)',
                         letterSpacing: '0.1em',
                         textTransform: 'uppercase',
                         marginBottom: '40px',
@@ -53,14 +64,21 @@ export function Hero() {
                             flexShrink: 0,
                         }}
                     />
+                    {/* On xs screens the text wraps naturally — no truncation needed */}
                     Available for work · {personal.location}
                 </motion.div>
 
-                {/* Name */}
+                {/* ── Name ── */}
                 <motion.h1
                     variants={heroItem(0.1)}
                     style={{
                         fontFamily: 'var(--font-serif)',
+                        /*
+                         * clamp(min, preferred, max)
+                         * 8.5vw hits 100px at ~1176px viewport.
+                         * On a 390px phone this renders at ~33px — too small.
+                         * Using 54px floor ensures readability on all phones.
+                         */
                         fontSize: 'clamp(54px, 8.5vw, 100px)',
                         fontWeight: 300,
                         lineHeight: 1.0,
@@ -74,13 +92,17 @@ export function Hero() {
                     <em style={{ fontStyle: 'italic', color: 'var(--t2)' }}>Nicolas Gil</em>
                 </motion.h1>
 
-                {/* Tagline */}
+                {/* ── Tagline ── */}
                 <motion.p
                     variants={heroItem(0.2)}
                     style={{
-                        fontSize: 'clamp(16px, 1.8vw, 20px)',
+                        fontSize: 'clamp(15px, 1.8vw, 20px)',
                         fontWeight: 300,
                         color: 'var(--t2)',
+                        /*
+                         * maxWidth caps the line length on large screens.
+                         * On mobile it naturally fills the container.
+                         */
                         maxWidth: '500px',
                         lineHeight: 1.65,
                         marginBottom: '52px',
@@ -90,154 +112,60 @@ export function Hero() {
                     <strong style={{ color: 'var(--t1)', fontWeight: 400 }}>
                         production web applications
                     </strong>{' '}
-                    that real businesses rely on — from inventory systems to authenticated
-                    e-commerce platforms.
+                    that real businesses rely on — from inventory systems to
+                    authenticated e-commerce platforms.
                 </motion.p>
 
-                {/* CTAs */}
+                {/* ── CTAs ── */}
                 <motion.div
                     variants={heroItem(0.32)}
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '12px',
-                        flexWrap: 'wrap',
-                        marginBottom: '72px',
-                    }}
+                    /*
+                     * hero-cta-group → globals.css
+                     * Desktop:  flex-row, items wrap
+                     * sm ≤640px: flex-column, buttons stretch full width
+                     */
+                    className="hero-cta-group"
                 >
-                    <a
-                        href="#work"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '7px',
-                            padding: '11px 22px',
-                            background: 'var(--accent)',
-                            color: '#0C0C0A',
-                            fontFamily: 'var(--font-sans)',
-                            fontSize: '13px',
-                            fontWeight: 500,
-                            textDecoration: 'none',
-                            borderRadius: '4px',
-                            transition: 'opacity 0.2s, transform 0.2s',
-                        }}
-                        onMouseEnter={e => {
-                            e.currentTarget.style.opacity = '0.86'
-                            e.currentTarget.style.transform = 'translateY(-1px)'
-                        }}
-                        onMouseLeave={e => {
-                            e.currentTarget.style.opacity = '1'
-                            e.currentTarget.style.transform = 'translateY(0)'
-                        }}
-                    >
-                        View Work →
-                    </a>
-
-                    <a
-                        href={personal.linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '7px',
-                            padding: '11px 22px',
-                            border: '1px solid var(--border-m)',
-                            color: 'var(--t2)',
-                            fontFamily: 'var(--font-sans)',
-                            fontSize: '13px',
-                            fontWeight: 400,
-                            textDecoration: 'none',
-                            borderRadius: '4px',
-                            transition: 'border-color 0.2s, color 0.2s',
-                        }}
-                        onMouseEnter={e => {
-                            e.currentTarget.style.borderColor = 'var(--border-s)'
-                            e.currentTarget.style.color = 'var(--t1)'
-                        }}
-                        onMouseLeave={e => {
-                            e.currentTarget.style.borderColor = 'var(--border-m)'
-                            e.currentTarget.style.color = 'var(--t2)'
-                        }}
-                    >
-                        LinkedIn ↗
-                    </a>
-
-                    <a
-                        href={personal.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '7px',
-                            padding: '11px 22px',
-                            border: '1px solid var(--border-m)',
-                            color: 'var(--t2)',
-                            fontFamily: 'var(--font-sans)',
-                            fontSize: '13px',
-                            fontWeight: 400,
-                            textDecoration: 'none',
-                            borderRadius: '4px',
-                            transition: 'border-color 0.2s, color 0.2s',
-                        }}
-                        onMouseEnter={e => {
-                            e.currentTarget.style.borderColor = 'var(--border-s)'
-                            e.currentTarget.style.color = 'var(--t1)'
-                        }}
-                        onMouseLeave={e => {
-                            e.currentTarget.style.borderColor = 'var(--border-m)'
-                            e.currentTarget.style.color = 'var(--t2)'
-                        }}
-                    >
-                        GitHub ↗
-                    </a>
+                    {LINKS.map(({ label, href, external, primary }) => (
+                        <a
+                            key={label}
+                            href={href}
+                            target={external ? '_blank' : undefined}
+                            rel={external ? 'noreferrer' : undefined}
+                            className={primary ? 'hero-cta-primary' : 'hero-cta-secondary'}
+                        >
+                            {label}
+                        </a>
+                    ))}
                 </motion.div>
 
-                {/* Meta */}
+                {/* ── Meta strip ── */}
                 <motion.div
                     variants={heroItem(0.44)}
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '20px',
-                        flexWrap: 'wrap',
-                    }}
+                    /*
+                     * hero-meta → globals.css
+                     * sm ≤640px: separators hidden, items wrap more tightly
+                     */
+                    className="hero-meta"
                 >
-                    {[
-                        'React · Next.js · Node.js',
-                        'Open to remote',
-                        '2 live client projects',
-                    ].map((item, i) => (
-                        <span key={item} style={{ display: 'inline-flex', alignItems: 'center', gap: '20px' }}>
+                    {META_ITEMS.map((item, i) => (
+                        <span
+                            key={item}
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '20px' }}
+                        >
+                            {/*
+               * Separator — hidden on sm via .hero-meta-sep { display: none }
+               * Avoids orphaned separators when items wrap to new line
+               */}
                             {i > 0 && (
-                                <span
-                                    aria-hidden="true"
-                                    style={{ width: '1px', height: '12px', background: 'var(--border-m)' }}
-                                />
+                                <span aria-hidden="true" className="hero-meta-sep" />
                             )}
-                            <span
-                                style={{
-                                    fontFamily: 'var(--font-mono)',
-                                    fontSize: '12px',
-                                    color: 'var(--t3)',
-                                    letterSpacing: '0.04em',
-                                }}
-                            >
-                                {item}
-                            </span>
+                            <span className="hero-meta-item" style={{color: "var(--t2)"}}>{item}</span>
                         </span>
                     ))}
                 </motion.div>
-            </motion.div>
 
-            {/* Pulse animation for the status dot */}
-            <style>{`
-        @keyframes pulse-dot {
-          0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(74,222,128,0.45); }
-          50%       { opacity: 0.65; box-shadow: 0 0 20px rgba(74,222,128,0.2); }
-        }
-      `}</style>
+            </motion.div>
         </section>
     )
 }

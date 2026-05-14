@@ -11,17 +11,12 @@ export function About() {
         <section
             id="about"
             aria-label="About"
-            style={{ padding: '112px 40px', maxWidth: 'var(--max-w)', margin: '0 auto' }}
+            className="about-section"
         >
             <div className="section-label">About</div>
 
             <div
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1.3fr 0.7fr',
-                    gap: '80px',
-                    alignItems: 'start',
-                }}
+                className="about-grid"
             >
                 {/* Bio */}
                 <motion.div
@@ -33,13 +28,7 @@ export function About() {
                     {personal.bio.map((paragraph, i) => (
                         <p
                             key={i}
-                            style={{
-                                fontSize: '17px',
-                                fontWeight: 300,
-                                lineHeight: 1.82,
-                                color: 'var(--t2)',
-                                marginBottom: i < personal.bio.length - 1 ? '24px' : 0,
-                            }}
+                            className="about-bio"
                             dangerouslySetInnerHTML={{
                                 __html: paragraph
                                     .replace(/self-taught fullstack developer/g, '<strong style="color:var(--t1);font-weight:400">self-taught fullstack developer</strong>')
@@ -56,7 +45,7 @@ export function About() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={viewport}
-                    style={{ display: 'flex', flexDirection: 'column', gap: '26px' }}
+                    className="about-stack"
                 >
                     {stackGroups.map(group => (
                         <motion.div key={group.label} variants={fadeUp}>
@@ -64,7 +53,7 @@ export function About() {
                                 style={{
                                     fontFamily: 'var(--font-mono)',
                                     fontSize: '10px',
-                                    color: 'var(--t3)',
+                                    color: 'var(--t2)',
                                     letterSpacing: '0.1em',
                                     textTransform: 'uppercase',
                                     marginBottom: '10px',
