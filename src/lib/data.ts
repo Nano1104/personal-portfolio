@@ -81,12 +81,12 @@ export const projects: Project[] = [
         screenshots: {
             primary: {
                 // Put your screenshot in /public/images/sw-catalog.png
-                src: '/images/sw-catalog.png',
+                src: '/images/sw-home.png',
                 alt: 'SW Autoparts product catalog with filters',
             },
             secondary: {
                 // Put your screenshot in /public/images/sw-product.png
-                src: '/images/sw-product.png',
+                src: '/images/sw-catalog.png',
                 alt: 'SW Autoparts product detail page',
             },
         },
