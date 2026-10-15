@@ -131,7 +131,7 @@ function Placeholder({ label }: { label: string }) {
             >
                 Add screenshot
             </span>
-            <span style={{ fontSize: '9px', color: 'var(--t3)', opacity: 0.5 }}>
+            <span style={{ fontSize: '9px', color: 'var(--t3)' }}>
                 {label}
             </span>
         </div>
@@ -215,9 +215,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         <TextLink href={project.url} external primary>
                             ↗ Live site
                         </TextLink>
-                        <TextLink href={project.github} external>
-                            GitHub →
-                        </TextLink>
+                        {project.github && (
+                            <TextLink href={project.github} external>
+                                GitHub →
+                            </TextLink>
+                        )}
                     </div>
                 </div>
 

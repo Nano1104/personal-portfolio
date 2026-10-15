@@ -21,7 +21,8 @@ export type Project = {
     highlights: string[]
     stack: string[]
     url: string
-    github: string
+    /** Omit when the repository is private */
+    github?: string
     urlText: string
     /** primary: shown left (larger). secondary: shown right (smaller). */
     screenshots: {
@@ -108,7 +109,6 @@ export const projects: Project[] = [
         ],
         stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Prisma', 'JWT', 'Cloudinary', 'Vercel'],
         url: 'https://www.darccuir-yatay.com.ar',
-        github: 'https://github.com/Kainos-dev/darccuiryatay-fullstack-web',
         urlText: 'darccuir-yatay.com.ar',
         screenshots: {
             primary: {

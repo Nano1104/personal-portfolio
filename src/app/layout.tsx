@@ -28,10 +28,12 @@ const dmMono = DM_Mono({
 
 // ─────────────────────────────────────────
 // METADATA & SEO
-// Update `metadataBase` with your real domain before deploying.
+// Temporary: production Vercel URL until a custom domain is configured.
 // ─────────────────────────────────────────
+const SITE_URL = 'https://personal-portfolio-virid-alpha.vercel.app'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://marianogil.dev'), // ← update with your domain
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Mariano Nicolas Gil — Fullstack Developer',
     template: '%s | Mariano Gil',
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://marianogil.dev',
+    url: SITE_URL,
     siteName: 'Mariano Gil',
     title: 'Mariano Nicolas Gil — Fullstack Developer',
     description:

@@ -8,8 +8,8 @@
   --bg-2: #111110;
   --bg-3: #171714;
   --t1: #F0EBE2;
-  --t2: #6B6760;
-  --t3: #383632;
+  --t2: #A8A399;
+  --t3: #8F8A81;
   --accent: #C9A96E;
   --accent-bg: rgba(201, 169, 110, 0.07);
   --accent-border: rgba(201, 169, 110, 0.18);
@@ -236,7 +236,7 @@ body::after {
   font-size: clamp(36px, 10vw, 56px);
   font-weight: 300;
   letter-spacing: -0.025em;
-  color: var(--t3);
+  color: var(--t2);
   text-decoration: none;
   padding: 8px 24px;
   transition: color 0.25s;
