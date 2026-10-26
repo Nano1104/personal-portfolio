@@ -129,7 +129,7 @@ function Placeholder({ label }: { label: string }) {
                     textTransform: 'uppercase',
                 }}
             >
-                Add screenshot
+                Captura pendiente
             </span>
             <span style={{ fontSize: '9px', color: 'var(--t3)' }}>
                 {label}
@@ -147,7 +147,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="project-card"
             variants={fadeUp}
             whileHover={{ borderColor: 'var(--border-m)' }}
-            aria-label={`Project: ${project.client}`}
+            aria-label={`Proyecto: ${project.client}`}
         >
             {/* Case study body */}
             <div
@@ -213,7 +213,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                         <TextLink href={project.url} external primary>
-                            ↗ Live site
+                            ↗ Ver sitio
                         </TextLink>
                         {project.github && (
                             <TextLink href={project.github} external>
@@ -235,7 +235,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                             marginBottom: '10px',
                         }}
                     >
-                        Technical Challenge
+                        Desafío técnico
                     </p>
 
                     <p
@@ -370,10 +370,10 @@ export function Work() {
     return (
         <section
             id="work"
-            aria-label="Selected Work"
+            aria-label="Proyectos"
             className="work-section"
         >
-            <div className="section-label">Selected Work</div>
+            <div className="section-label">Proyectos</div>
 
             <motion.div
                 variants={container}

@@ -33,7 +33,7 @@ export function Footer() {
                     letterSpacing: '0.04em',
                 }}
             >
-                Built with Next.js · Deployed on Vercel
+                Hecho con Next.js · Publicado en Vercel
             </span>
         </footer>
     )

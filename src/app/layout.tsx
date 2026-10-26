@@ -35,37 +35,37 @@ const SITE_URL = 'https://personal-portfolio-virid-alpha.vercel.app'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Mariano Nicolas Gil — Fullstack Developer',
+    default: 'Mariano Nicolas Gil — Desarrollador fullstack',
     template: '%s | Mariano Gil',
   },
   description:
-    'Fullstack developer based in Buenos Aires, building production web applications with React, Next.js, and Node.js. Available for remote work.',
+    'Desarrollador fullstack en Buenos Aires. Construyo aplicaciones web en producción con React, Next.js y Node.js. Disponible para trabajo remoto y proyectos freelance.',
   keywords: [
-    'fullstack developer',
-    'react developer',
+    'desarrollador fullstack',
+    'desarrollador react',
     'next.js',
     'node.js',
     'buenos aires',
-    'remote',
-    'web developer',
+    'remoto',
+    'desarrollador web',
   ],
   authors: [{ name: 'Mariano Nicolas Gil' }],
   creator: 'Mariano Nicolas Gil',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'es_AR',
     url: SITE_URL,
     siteName: 'Mariano Gil',
-    title: 'Mariano Nicolas Gil — Fullstack Developer',
+    title: 'Mariano Nicolas Gil — Desarrollador fullstack',
     description:
-      'Fullstack developer based in Buenos Aires, building production web applications.',
+      'Desarrollador fullstack en Buenos Aires. Construyo aplicaciones web en producción para negocios reales.',
     // Add an OG image: /public/og-image.png (1200×630px recommended)
     // images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Mariano Gil' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mariano Nicolas Gil — Fullstack Developer',
-    description: 'Fullstack developer based in Buenos Aires.',
+    title: 'Mariano Nicolas Gil — Desarrollador fullstack',
+    description: 'Desarrollador fullstack en Buenos Aires.',
     // images: ['/og-image.png'],
   },
   robots: {
@@ -89,7 +89,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body>{children}</body>

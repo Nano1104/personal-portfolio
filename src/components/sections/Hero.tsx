@@ -5,15 +5,15 @@ import { personal } from '@/lib/data'
 import { heroItem, stagger } from '@/lib/motion'
 
 const LINKS = [
-    { label: 'View Work →', href: '#work', external: false, primary: true },
+    { label: 'Ver proyectos →', href: '#work', external: false, primary: true },
     { label: 'LinkedIn ↗', href: personal.linkedin, external: true, primary: false },
     { label: 'GitHub ↗', href: personal.github, external: true, primary: false },
 ]
 
 const META_ITEMS = [
     'React · Next.js · Node.js',
-    'Open to remote',
-    '2 live client projects',
+    'Disponible para trabajo remoto',
+    '2 proyectos de clientes en producción',
 ]
 
 export function Hero() {
@@ -29,7 +29,7 @@ export function Hero() {
          *   sm       → same as md
          *   xs       → 80px  16px 52px
          */
-        <section className="hero-section" aria-label="Introduction">
+        <section className="hero-section" aria-label="Presentación">
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -65,7 +65,7 @@ export function Hero() {
                         }}
                     />
                     {/* On xs screens the text wraps naturally — no truncation needed */}
-                    Available for work · {personal.location}
+                    Disponible para trabajar · {personal.location}
                 </motion.div>
 
                 {/* ── Name ── */}
@@ -108,12 +108,12 @@ export function Hero() {
                         marginBottom: '52px',
                     }}
                 >
-                    Fullstack developer building{' '}
+                    Desarrollador fullstack. Construyo{' '}
                     <strong style={{ color: 'var(--t1)', fontWeight: 400 }}>
-                        production web applications
+                        aplicaciones web en producción
                     </strong>{' '}
-                    that real businesses rely on — from inventory systems to
-                    authenticated e-commerce platforms.
+                    para negocios reales, desde sistemas de inventario hasta
+                    tiendas online con cuentas de usuario.
                 </motion.p>
 
                 {/* ── CTAs ── */}

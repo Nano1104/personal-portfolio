@@ -10,10 +10,10 @@ export function About() {
     return (
         <section
             id="about"
-            aria-label="About"
+            aria-label="Sobre mí"
             className="about-section"
         >
-            <div className="section-label">About</div>
+            <div className="section-label">Sobre mí</div>
 
             <div
                 className="about-grid"
@@ -31,9 +31,9 @@ export function About() {
                             className="about-bio"
                             dangerouslySetInnerHTML={{
                                 __html: paragraph
-                                    .replace(/self-taught fullstack developer/g, '<strong style="color:var(--t1);font-weight:400">self-taught fullstack developer</strong>')
-                                    .replace(/real-world business problems/g, '<strong style="color:var(--t1);font-weight:400">real-world business problems</strong>')
-                                    .replace(/code quality/g, '<strong style="color:var(--t1);font-weight:400">code quality</strong>'),
+                                    .replace(/desarrollador fullstack autodidacta/g, '<strong style="color:var(--t1);font-weight:400">desarrollador fullstack autodidacta</strong>')
+                                    .replace(/problemas reales de negocio/g, '<strong style="color:var(--t1);font-weight:400">problemas reales de negocio</strong>')
+                                    .replace(/calidad del código/g, '<strong style="color:var(--t1);font-weight:400">calidad del código</strong>'),
                             }}
                         />
                     ))}

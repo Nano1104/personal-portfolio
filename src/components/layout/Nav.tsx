@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react'
 import { personal } from '@/lib/data'
 
 const NAV_LINKS = [
-    { label: 'Work', href: '#work' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Proyectos', href: '#work' },
+    { label: 'Sobre mí', href: '#about' },
+    { label: 'Contacto', href: '#contact' },
 ]
 
 export function Nav() {
@@ -49,7 +49,7 @@ export function Nav() {
                 </Link>
 
                 {/* Desktop navigation */}
-                <nav className="nav-desktop" aria-label="Main navigation">
+                <nav className="nav-desktop" aria-label="Navegación principal">
                     <ul>
                         {NAV_LINKS.map(({ label, href }) => (
                             <li key={label}>
@@ -62,7 +62,7 @@ export function Nav() {
                                 target="_blank"
                                 rel="noreferrer"
                                 className="nav-cta"
-                                aria-label="GitHub profile (opens in new tab)"
+                                aria-label="Perfil de GitHub (se abre en una pestaña nueva)"
                             >
                                 GitHub ↗
                             </a>
@@ -74,7 +74,7 @@ export function Nav() {
                 <button
                     className="nav-hamburger"
                     onClick={toggle}
-                    aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                    aria-label={menuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
                     aria-expanded={menuOpen}
                     aria-controls="mobile-menu"
                 >
@@ -89,9 +89,9 @@ export function Nav() {
                 aria-hidden={!menuOpen}
                 role="dialog"
                 aria-modal="true"
-                aria-label="Navigation menu"
+                aria-label="Menú de navegación"
             >
-                <nav aria-label="Mobile navigation">
+                <nav aria-label="Navegación móvil">
                     {NAV_LINKS.map(({ label, href }, i) => (
                         <a
                             key={label}

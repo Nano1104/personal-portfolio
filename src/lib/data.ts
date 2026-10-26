@@ -42,17 +42,17 @@ export type StackGroup = {
 export const personal = {
     name: 'Mariano Nicolas Gil',
     shortName: 'Mariano Gil',
-    role: 'Fullstack Developer',
+    role: 'Desarrollador fullstack',
     location: 'Buenos Aires, Argentina',
     email: 'marianogil2004@gmail.com',
     linkedin: 'https://www.linkedin.com/in/mariano-gil/',
     github: 'https://github.com/Nano1104',
-    headline: 'Fullstack developer building production web applications that real businesses rely on.',
-    tagline: 'From complex inventory systems to authenticated e-commerce platforms.',
+    headline: 'Desarrollador fullstack. Construyo aplicaciones web que usan negocios reales todos los días.',
+    tagline: 'Desde sistemas de inventario hasta tiendas online con cuentas de usuario.',
     bio: [
-        "I'm a self-taught fullstack developer based in Buenos Aires. I build complete web products — from database design and API architecture to deployed, production-ready frontends — using React, Next.js, and Node.js.",
-        "My work focuses on real-world business problems: inventory systems that replace manual spreadsheets, e-commerce platforms with complex authentication flows, and admin tooling that non-technical teams can actually use. I've shipped two production applications with real customers and real orders.",
-        "I work precisely, communicate clearly, and care about both code quality and the experience the end user actually gets. Open to fullstack and frontend roles — remote or in Buenos Aires.",
+        'Soy desarrollador fullstack autodidacta y vivo en Buenos Aires. Construyo productos web completos con React, Next.js y Node.js: desde el diseño de la base de datos y la API hasta el frontend publicado y funcionando.',
+        'Me enfoco en problemas reales de negocio: sistemas de inventario que reemplazan planillas manuales, tiendas online con flujos de autenticación complejos y paneles de administración que puede usar un equipo sin perfil técnico. Ya tengo dos aplicaciones en producción, con clientes y pedidos reales.',
+        'Trabajo con atención al detalle, me comunico con claridad y me importan tanto la calidad del código como la experiencia de quien usa el producto. Busco puestos fullstack o frontend, remotos o en Buenos Aires, y también tomo proyectos freelance.',
     ],
 }
 
@@ -64,16 +64,16 @@ export const projects: Project[] = [
         id: '01',
         client: 'SW Autoparts',
         year: '2024-2025',
-        type: 'B2B Platform',
-        title: ['Inventory Management', 'Platform'],
+        type: 'Plataforma B2B',
+        title: ['Gestión de', 'inventario'],
         description:
-            'SW Autoparts needed to move their entire parts catalog — previously managed in Excel spreadsheets — into a searchable, filterable web platform. The system handles 2,100+ SKUs with multi-criteria filtering, category navigation, and a reservation flow.',
+            'SW Autoparts administraba todo su catálogo de repuestos en planillas de Excel y necesitaba llevarlo a una plataforma web con búsqueda y filtros. El sistema maneja más de 2.100 productos, con filtros combinados, navegación por categorías y un flujo de reservas.',
         challenge:
-            'Building a search and filter engine across 2,100+ products — spanning dozens of brands, categories, and price ranges — that feels instant without relying on any paid search service.',
+            'Construir un buscador con filtros para más de 2.100 productos, de decenas de marcas, categorías y rangos de precio, que respondiera al instante sin depender de un servicio de búsqueda pago.',
         highlights: [
-            'Designed and built RESTful APIs covering the full inventory lifecycle: products, categories, stock, and reservation orders',
-            'Implemented multi-criteria filtering (brand, price range, category) with breadcrumb navigation across a 2,100+ item catalog',
-            'Built a reservation system allowing customers to place orders before payment confirmation, with a live consultation panel',
+            'Diseñé y desarrollé las APIs REST para todo el ciclo del inventario: productos, categorías, stock y pedidos de reserva.',
+            'Implementé filtros combinados (marca, rango de precio y categoría) con navegación por breadcrumbs en un catálogo de más de 2.100 productos.',
+            'Desarrollé un sistema de reservas que permite a los clientes hacer pedidos antes de confirmar el pago.',
         ],
         stack: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Vercel', 'Render'],
         url: 'https://www.swautoparts.com',
@@ -83,12 +83,12 @@ export const projects: Project[] = [
             primary: {
                 // Put your screenshot in /public/images/sw-catalog.png
                 src: '/images/sw-home.png',
-                alt: 'SW Autoparts product catalog with filters',
+                alt: 'Página de inicio de SW Autoparts',
             },
             secondary: {
                 // Put your screenshot in /public/images/sw-product.png
                 src: '/images/sw-catalog.png',
-                alt: 'SW Autoparts product detail page',
+                alt: 'Catálogo de repuestos de SW Autoparts con filtros por marca y precio',
             },
         },
     },
@@ -96,16 +96,16 @@ export const projects: Project[] = [
         id: '02',
         client: 'Darc Cuir & Yatay',
         year: '2025',
-        type: 'E-commerce Platform',
-        title: ['Dual-Brand', 'E-commerce'],
+        type: 'Tienda online',
+        title: ['E-commerce', 'para dos marcas'],
         description:
-            'Two leather goods brands under one factory needed a complete rebuild from a failing legacy site. The result: a shared platform with independent storefronts, authenticated ordering, and a unified admin panel managing both brands from a single interface.',
+            'Dos marcas de marroquinería de una misma fábrica necesitaban reemplazar por completo un sitio anterior que no funcionaba bien. El resultado es una plataforma compartida con una tienda independiente para cada marca, pedidos con cuenta de usuario y un único panel de administración para las dos.',
         challenge:
-            'Anonymous cart persistence — users needed to browse and add items without logging in, then have their cart state seamlessly merge into their authenticated session without data loss or duplication.',
+            'Mantener el carrito de usuarios anónimos: había que permitir navegar y agregar productos sin iniciar sesión y, al ingresar, sumar ese carrito a la cuenta del usuario sin perder ni duplicar productos.',
         highlights: [
-            'Built anonymous cart system with full session-to-auth synchronization — cart items persist across the login/signup flow',
-            'Implemented role-based access control (RBAC) separating retail and wholesale customers with different pricing and order flows',
-            'Created a unified admin panel managing products, SKUs, inventory, user roles, and Cloudinary images for two independent brands',
+            'Desarrollé un carrito para usuarios anónimos que se sincroniza con la cuenta: los productos se conservan al iniciar sesión o registrarse.',
+            'Implementé control de acceso basado en roles (RBAC) para separar clientes minoristas y mayoristas, con precios y flujos de pedido distintos.',
+            'Creé un panel de administración unificado para gestionar productos, SKUs, inventario, roles de usuario e imágenes en Cloudinary de las dos marcas.',
         ],
         stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Prisma', 'JWT', 'Cloudinary', 'Vercel'],
         url: 'https://www.darccuir-yatay.com.ar',
@@ -113,11 +113,11 @@ export const projects: Project[] = [
         screenshots: {
             primary: {
                 src: '/images/dy-catalog.png',
-                alt: 'Darc Cuir & Yatay product catalog',
+                alt: 'Catálogo de productos de Darc Cuir & Yatay',
             },
             secondary: {
                 src: '/images/dy-product.png',
-                alt: 'Darc Cuir & Yatay product detail with color and size selectors',
+                alt: 'Detalle de producto de Darc Cuir & Yatay con selección de color y talle',
             },
         },
     },
@@ -136,11 +136,11 @@ export const stackGroups: StackGroup[] = [
         items: ['Node.js', 'Express.js', 'MongoDB', 'Prisma'],
     },
     {
-        label: 'Tools & Infra',
-        items: ['Git', 'JWT', 'REST APIs', 'Cloudinary', 'Vercel'],
+        label: 'Herramientas e infraestructura',
+        items: ['Git', 'JWT', 'APIs REST', 'Cloudinary', 'Vercel'],
     },
     {
-        label: 'Design',
+        label: 'Diseño',
         items: ['Figma', 'Illustrator'],
     },
 ]

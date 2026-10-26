@@ -14,7 +14,7 @@ export function Contact() {
     return (
         <section
             id="contact"
-            aria-label="Contact"
+            aria-label="Contacto"
             style={{ padding: '112px 40px', maxWidth: 'var(--max-w)', margin: '0 auto' }}
         >
             <motion.div
@@ -35,9 +35,9 @@ export function Contact() {
                         marginBottom: '24px',
                     }}
                 >
-                    Let&apos;s work
+                    Trabajemos
                     <br />
-                    <em style={{ fontStyle: 'italic', color: 'var(--t2)' }}>together.</em>
+                    <em style={{ fontStyle: 'italic', color: 'var(--t2)' }}>juntos.</em>
                 </h2>
 
                 <p
@@ -49,11 +49,11 @@ export function Contact() {
                         lineHeight: 1.65,
                     }}
                 >
-                    Open to fullstack and frontend roles — remote or Buenos Aires.
-                    Freelance projects welcome.
+                    Busco puestos fullstack o frontend, remotos o en Buenos Aires.
+                    También tomo proyectos freelance.
                 </p>
 
-                <nav aria-label="Contact links">
+                <nav aria-label="Enlaces de contacto">
                     <ul
                         style={{
                             display: 'flex',
